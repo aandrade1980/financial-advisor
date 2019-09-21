@@ -1,12 +1,18 @@
 import React from "react";
+import classNames from "classnames";
 
-const RiskSelectorButton = ({ riskLevel }) => {
-  const handleClick = () => {
-    console.log("click on risk level => ", riskLevel);
-  };
+// Redux
+import { connect } from "react-redux";
+import { setRiskLevel } from "../redux/actions/financialActions";
+
+const RiskSelectorButton = ({ riskLevel, selectedRiskLevel, setRiskLevel }) => {
+  const handleClick = () => setRiskLevel(riskLevel);
+
   return (
     <button
-      className="risk-selector-button"
+      className={classNames("risk-selector-button", {
+        active: riskLevel === selectedRiskLevel
+      })}
       type="button"
       onClick={handleClick}
     >
@@ -15,4 +21,7 @@ const RiskSelectorButton = ({ riskLevel }) => {
   );
 };
 
-export default RiskSelectorButton;
+export default connect(
+  null,
+  { setRiskLevel }
+)(RiskSelectorButton);
