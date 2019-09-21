@@ -28,6 +28,7 @@ body {
 ul {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 header {
@@ -54,4 +55,42 @@ header {
   font-weight: normal;
   display: flex;
   align-items: center;
+}
+
+.risk-selector-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.risk-selector-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.risk-selector-header-title {
+  font-size: 20px;
+}
+
+.risk-selector-header-labels {
+  display: flex;
+  font-size: 18px;
+  justify-content: space-between;
+}
+
+.risk-selector-buttons-list {
+  display: flex;
+}
+
+.risk-selector-button {
+  height: 56px;
+  width: 62px;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 2px;
+  font-size: 27px;
+  font-weight: 500;
+  cursor: pointer;
 }
