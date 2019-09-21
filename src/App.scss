@@ -93,4 +93,7 @@ header {
   font-size: 27px;
   font-weight: 500;
   cursor: pointer;
+  &.active {
+    background-color: rgb(230, 255, 63);
+  }
 }

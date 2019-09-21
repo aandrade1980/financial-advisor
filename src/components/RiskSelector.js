@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 
+// Redux
+import { connect } from "react-redux";
+
 // Components
 import RiskSelectorHeader from "./RiskSelectorHeader";
 import RiskSelectorButton from "./RiskSelectorButton";
 
-import { riskLevels } from "../RiskData";
-
-export default class RiskSelector extends Component {
+class RiskSelector extends Component {
   render() {
+    const { riskLevels, selectedRiskLevel } = this.props;
+
     return (
       <div className="risk-selector-container">
         <RiskSelectorHeader title="Please Select A Risk Level For Your Investment Portfolio" />
@@ -16,7 +19,10 @@ export default class RiskSelector extends Component {
             <ul className="risk-selector-buttons-list">
               {riskLevels.map(level => (
                 <li key={level.risk}>
-                  <RiskSelectorButton riskLevel={level.risk} />
+                  <RiskSelectorButton
+                    riskLevel={level.risk}
+                    selectedRiskLevel={selectedRiskLevel}
+                  />
                 </li>
               ))}
             </ul>
@@ -26,3 +32,15 @@ export default class RiskSelector extends Component {
     );
   }
 }
+
+const mapStateToProps = ({
+  financialReducer: { riskLevels, selectedRiskLevel }
+}) => ({
+  riskLevels,
+  selectedRiskLevel
+});
+
+export default connect(
+  mapStateToProps,
+  {}
+)(RiskSelector);
