@@ -1,6 +1,7 @@
 // Vars
 $blue: #0084bf;
 $green: #0c8996;
+$yellow: rgb(230, 255, 63);
 
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900");
 
@@ -93,7 +94,47 @@ header {
   font-size: 27px;
   font-weight: 500;
   cursor: pointer;
+  outline: none;
   &.active {
-    background-color: rgb(230, 255, 63);
+    background-color: $yellow;
   }
+}
+
+.risk-level-table-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+#risk-level-table {
+  text-align: center;
+  border-collapse: collapse;
+  border: 3px solid #ddd;
+  width: 80%;
+}
+
+#risk-level-table td,
+#risk-level-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#risk-level-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#risk-level-table tr:hover {
+  background-color: #ddd;
+}
+
+#risk-level-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #f9f9f9;
+  color: black;
+}
+
+#risk-level-table tr.active {
+  background-color: $yellow;
 }
