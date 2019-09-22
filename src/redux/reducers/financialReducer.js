@@ -2,7 +2,8 @@ import { riskLevels } from "../../RiskData";
 
 const initialState = {
   riskLevels,
-  selectedRiskLevel: 0
+  selectedRiskLevel: 0,
+  showTable: true
 };
 
 export default function(state = initialState, action) {
@@ -11,6 +12,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         selectedRiskLevel: action.payload
+      };
+    case "SET_SHOW_TABLE":
+      return {
+        ...state,
+        showTable: !state.showTable
       };
     default:
       return state;

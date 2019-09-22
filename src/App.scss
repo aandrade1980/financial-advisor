@@ -103,14 +103,12 @@ header {
 .risk-level-table-container {
   display: flex;
   justify-content: center;
-  margin-top: 25px;
 }
 
 #risk-level-table {
   text-align: center;
   border-collapse: collapse;
-  border: 3px solid #ddd;
-  width: 80%;
+  width: 100%;
 }
 
 #risk-level-table td,
@@ -137,4 +135,31 @@ header {
 
 #risk-level-table tr.active {
   background-color: $yellow;
+}
+
+.risk-level-chart-container {
+  display: flex;
+  justify-content: center;
+}
+
+.risk-level-info-container {
+  width: 720px;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  margin: 25px auto;
+}
+
+.toggle-info {
+  position: absolute;
+  top: 0;
+  right: -75px;
+}
+
+.donut {
+  background: url("/images/donutlogo.png") center/cover no-repeat;
+}
+
+.table {
+  background: url("/images/chartlogo.jpg") center/cover no-repeat;
 }
