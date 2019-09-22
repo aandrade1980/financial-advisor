@@ -100,6 +100,16 @@ header {
   }
 }
 
+.risk-selector-button.blue-button {
+  width: fit-content;
+  font-size: 17px;
+  font-weight: 600;
+  background-color: #73d0ff;
+  &:disabled {
+    opacity: 0.4;
+  }
+}
+
 .risk-level-table-container {
   display: flex;
   justify-content: center;
