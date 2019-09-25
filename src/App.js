@@ -1,45 +1,20 @@
 import React from "react";
 import "./App.scss";
-import classNames from "classnames";
-
-// Redux
-import { connect } from "react-redux";
-import { toggleInfoDisplay } from "./redux/actions/financialActions";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Components
 import Header from "./components/Header";
 import RiskSelector from "./components/RiskSelector";
-import RiskTable from "./components/RiskTable";
-import Chart from "./components/Chart";
+import RiskCalculator from "./components/RiskCalculator";
 
-const App = ({ showTable, toggleInfoDisplay }) => {
-  const handleClick = () => toggleInfoDisplay();
-
-  return (
+const App = () => (
+  <Router>
     <div className="App">
       <Header title="Financial Advisor" />
-      <RiskSelector />
-      <main className="risk-level-info-container">
-        {showTable && <RiskTable />}
-        {!showTable && <Chart />}
-        <button
-          className={classNames("risk-selector-button", "toggle-info", {
-            donut: showTable,
-            table: !showTable
-          })}
-          type="button"
-          onClick={handleClick}
-        />
-      </main>
+      <Route path="/" exact component={RiskSelector} />
+      <Route path="/calculator/" component={RiskCalculator} />
     </div>
-  );
-};
+  </Router>
+);
 
-const mapStateToProps = ({ financialReducer: { showTable } }) => ({
-  showTable
-});
-
-export default connect(
-  mapStateToProps,
-  { toggleInfoDisplay }
-)(App);
+export default App;

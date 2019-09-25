@@ -1,20 +1,33 @@
 import React, { Component } from "react";
+import classNames from "classnames";
 
 // Redux
 import { connect } from "react-redux";
+import { toggleInfoDisplay } from "../redux/actions/financialActions";
 
 // Components
 import RiskSelectorHeader from "./RiskSelectorHeader";
 import RiskSelectorButton from "./RiskSelectorButton";
+import RiskTable from "./RiskTable";
+import Chart from "./Chart";
 import Button from "./Button";
 
-class RiskSelector extends Component {
-  render() {
-    const { riskLevels, selectedRiskLevel } = this.props;
+const headerTitles = [
+  "Risk",
+  "Bonds %",
+  "Large Cap %",
+  "Mid Cap %",
+  "Foreing %",
+  "Small Cap %"
+];
 
-    const handleContinue = () => {
-      // TODO: Show next screen: 'Personalized Portfolio'
-    };
+class RiskSelector extends Component {
+  handleClick = () => this.props.toggleInfoDisplay();
+
+  handleContinue = () => this.props.history.push("/calculator");
+
+  render() {
+    const { riskLevels, selectedRiskLevel, showTable } = this.props;
 
     return (
       <div className="risk-selector-container">
@@ -35,23 +48,42 @@ class RiskSelector extends Component {
           <Button
             text="Continue"
             className="risk-selector-button blue-button"
-            onClick={handleContinue}
+            onClick={this.handleContinue}
             disabled={selectedRiskLevel === 0}
           />
         </div>
+        <main className="risk-level-info-container">
+          {showTable && (
+            <RiskTable
+              headerTitles={headerTitles}
+              riskLevels={riskLevels}
+              selectedRiskLevel={selectedRiskLevel}
+            />
+          )}
+          {!showTable && <Chart />}
+          <button
+            className={classNames("risk-selector-button", "toggle-info", {
+              donut: showTable,
+              table: !showTable
+            })}
+            type="button"
+            onClick={this.handleClick}
+          />
+        </main>
       </div>
     );
   }
 }
 
 const mapStateToProps = ({
-  financialReducer: { riskLevels, selectedRiskLevel }
+  financialReducer: { riskLevels, selectedRiskLevel, showTable }
 }) => ({
   riskLevels,
-  selectedRiskLevel
+  selectedRiskLevel,
+  showTable
 });
 
 export default connect(
   mapStateToProps,
-  {}
+  { toggleInfoDisplay }
 )(RiskSelector);
