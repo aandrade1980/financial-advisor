@@ -80,3 +80,36 @@ export const riskLevels = [
     smallCap: 40
   }
 ];
+
+export const levelInfo = [
+  {
+    label: "Bond",
+    value: "bond",
+    differenceLabel: "differenceBond",
+    newAmountLabel: "newAmountBond"
+  },
+  {
+    label: "Large Cap",
+    value: "largeCap",
+    differenceLabel: "differenceLargeCap",
+    newAmountLabel: "newAmountLargeCap"
+  },
+  {
+    label: "Mid Cap",
+    value: "midCap",
+    differenceLabel: "differenceMidCap",
+    newAmountLabel: "newAmountMidCap"
+  },
+  {
+    label: "Foreing",
+    value: "foreing",
+    differenceLabel: "differenceForeing",
+    newAmountLabel: "newAmountForeing"
+  },
+  {
+    label: "Small Cap",
+    value: "smallCap",
+    differenceLabel: "differenceSmallCap",
+    newAmountLabel: "newAmountSmallCap"
+  }
+];

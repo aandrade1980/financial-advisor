@@ -1,39 +1,31 @@
 import React from "react";
 import classNames from "classnames";
 
-// Redux
-import { connect } from "react-redux";
-
-const RiskTable = ({ riskLevels, selectedRiskLevel }) => {
-  const renderTableHeader = () => {
-    const headerTitles = [
-      "Risk",
-      "Bonds %",
-      "Large Cap %",
-      "Mid Cap %",
-      "Foreing %",
-      "Small Cap %"
-    ];
-    return headerTitles.map((title, index) => <th key={index}>{title}</th>);
-  };
+const RiskTable = ({
+  riskLevels = [],
+  selectedRiskLevel = 0,
+  headerTitles,
+  showPorcentaje = false
+}) => {
+  const renderTableHeader = () =>
+    headerTitles.map((title, index) => <th key={index}>{title}</th>);
 
   const renderTableData = () =>
-    riskLevels.map(level => {
-      const { risk, bonds, largeCap, midCap, foreign, smallCap } = level;
-      return (
-        <tr
-          key={risk}
-          className={classNames({ active: selectedRiskLevel === risk })}
-        >
-          <td>{risk}</td>
-          <td>{bonds}</td>
-          <td>{largeCap}</td>
-          <td>{midCap}</td>
-          <td>{foreign}</td>
-          <td>{smallCap}</td>
-        </tr>
-      );
-    });
+    riskLevels.map((level, index) => (
+      <tr
+        key={index}
+        className={classNames({
+          active: selectedRiskLevel === level.risk
+        })}
+      >
+        {Object.values(level).map((value, index) => (
+          <td key={index}>
+            {value}
+            {showPorcentaje && `%`}
+          </td>
+        ))}
+      </tr>
+    ));
 
   return (
     <div className="risk-level-table-container">
@@ -47,14 +39,4 @@ const RiskTable = ({ riskLevels, selectedRiskLevel }) => {
   );
 };
 
-const mapStateToProps = ({
-  financialReducer: { riskLevels, selectedRiskLevel }
-}) => ({
-  riskLevels,
-  selectedRiskLevel
-});
-
-export default connect(
-  mapStateToProps,
-  {}
-)(RiskTable);
+export default RiskTable;
