@@ -67,21 +67,30 @@ header {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  max-width: 750px;
+  margin: auto;
 }
 
 .risk-selector-header {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .risk-selector-header-title {
   font-size: 20px;
+  text-align: center;
 }
 
 .risk-selector-header-labels {
   display: flex;
   font-size: 18px;
   justify-content: space-between;
+  span {
+    margin-right: 95px;
+    margin-left: 5px;
+    font-size: 16px;
+  }
 }
 
 .risk-selector-buttons-list {
@@ -105,7 +114,7 @@ header {
 }
 
 .risk-selector-button.blue-button {
-  width: fit-content;
+  width: auto;
   font-size: 17px;
   font-weight: 600;
   background-color: #73d0ff;
@@ -140,8 +149,7 @@ header {
 }
 
 #risk-level-table th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 12px 4px;
   text-align: center;
   background-color: #f9f9f9;
   color: black;
@@ -161,7 +169,7 @@ header {
   position: relative;
   display: flex;
   flex-flow: column;
-  margin: 25px auto;
+  margin: 30px auto;
 }
 
 .toggle-info {
@@ -291,4 +299,90 @@ input:disabled {
 
 .blue {
   color: blue;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    height: 80px;
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-size: 28px;
+  }
+  .risk-selector-header-title,
+  .risk-selected-info,
+  .risk-calculator-rebalance-container {
+    font-size: 14px;
+    margin-top: 5px;
+    h3 {
+      font-size: 14px;
+    }
+  }
+  #top-logo {
+    margin: 18px 15px;
+    width: 45px;
+  }
+  .risk-selector-header span {
+    display: none;
+  }
+  .risk-selector-button {
+    height: 23px;
+    width: 26px;
+    border: 1px solid black;
+    padding: 0;
+    font-size: 12px;
+    &.blue-button {
+      font-size: 12px;
+      padding: 5px;
+    }
+  }
+  .risk-level-info-container {
+    width: 100%;
+  }
+  #risk-level-table {
+    font-size: 12px;
+    th {
+      font-size: 12px;
+    }
+  }
+  .toggle-info {
+    left: 0;
+    top: -27px;
+  }
+  .risk-calculator-title {
+    font-size: 18px;
+  }
+  .risk-calculator-container {
+    width: 100vw;
+    padding: 5px;
+  }
+  .risk-level-table-container {
+    width: 98vw;
+  }
+  .risk-calculator-input-container {
+    margin-top: 0;
+  }
+  .risk-calculator-input-labels {
+    grid-template-columns: 190px 1fr 1fr;
+    font-size: 12px;
+  }
+  .risk-calculator-input-labels span:nth-child(4) {
+    display: none;
+  }
+  .risk-calculator-main-row {
+    font-size: 12px;
+    align-items: center;
+  }
+  .risk-calculator-main-row {
+    grid-template-columns: 70px 1fr 1fr 1fr;
+  }
+  .risk-calculator-main-input {
+    width: 60px;
+  }
+  .risk-calculator-transfers {
+    left: 1%;
+    top: 210px;
+    height: 145px;
+    width: 98%;
+  }
 }
