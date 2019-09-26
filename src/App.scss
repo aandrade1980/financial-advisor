@@ -1,13 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900");
+
 // Colors
 $blue: #0084bf;
 $green: #0c8996;
 $yellow: rgb(230, 255, 63);
 $grey: #e9e9e9;
+$grey2: #ddd;
+$white: #f9f9f9;
 
 // Generals
 $grey-border: 1px solid $grey;
-
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900");
+$grey-border2: 1px solid grey;
+$black-border: 1px solid black;
 
 // General Settings
 html {
@@ -136,7 +140,7 @@ header {
 
 #risk-level-table td,
 #risk-level-table th {
-  border: 1px solid #ddd;
+  border: 1px solid $grey2;
   padding: 8px;
 }
 
@@ -145,13 +149,13 @@ header {
 }
 
 #risk-level-table tr:hover {
-  background-color: #ddd;
+  background-color: $grey2;
 }
 
 #risk-level-table th {
   padding: 12px 4px;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: $white;
   color: black;
 }
 
@@ -212,9 +216,7 @@ header {
   align-items: center;
   font-size: 22px;
   font-weight: 600;
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 20px 10px 10px 0;
 }
 
 .risk-calculator-input-container {
@@ -234,7 +236,7 @@ header {
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: 600;
-  background: #f9f9f9;
+  background: $white;
   border-bottom: $grey-border;
   span:nth-child(1) {
     margin-right: 60px;
@@ -262,7 +264,7 @@ header {
   height: 27px;
   width: 95px;
   font-size: 12px;
-  border: 1px solid black;
+  border: $black-border;
   border-radius: 5px;
   padding-left: 5px;
   padding-right: 5px;
@@ -275,7 +277,7 @@ header {
   top: 10px;
   height: 179px;
   width: 170px;
-  border: 1px solid grey;
+  border: $grey-border2;
   border-radius: 5px;
   padding: 5px;
   font-size: 14px;
@@ -286,7 +288,7 @@ header {
 }
 
 input:disabled {
-  border: 1px solid grey;
+  border: $grey-border2;
 }
 
 .red {
@@ -328,7 +330,7 @@ input:disabled {
   .risk-selector-button {
     height: 23px;
     width: 26px;
-    border: 1px solid black;
+    border: $black-border;
     padding: 0;
     font-size: 12px;
     &.blue-button {
