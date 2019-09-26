@@ -29,7 +29,6 @@ App Demo:
 Things to improve:
 
 - There is no validation in the inputs in the rebalance step.
--
 
 ### More Info:
 
