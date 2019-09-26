@@ -114,14 +114,16 @@ class RiskCalculator extends React.Component {
         differencesCopy[lowestValuePosition] = lowestValue + nextPositiveValue;
         differencesCopy[positiveValuePosition] = 0;
 
-        this.recommendedUl.current.innerHTML += `<li>• Transfer $${nextPositiveValue} from ${negativeValueLabel} to ${positiveValueLabel}</li>`;
+        this.recommendedUl.current.innerHTML += `<li>• Transfer $${Math.round(
+          100 * nextPositiveValue
+        ) / 100} from ${negativeValueLabel} to ${positiveValueLabel}</li>`;
       } else {
         differencesCopy[lowestValuePosition] = 0;
         differencesCopy[positiveValuePosition] =
           nextPositiveValue + lowestValue;
 
         this.recommendedUl.current.innerHTML += `<li>• Transfer $${Math.abs(
-          lowestValue
+          Math.round(100 * lowestValue) / 100
         )} from ${negativeValueLabel} to ${positiveValueLabel}</li>`;
       }
     }
