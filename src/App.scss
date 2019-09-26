@@ -140,8 +140,7 @@ header {
 }
 
 #risk-level-table th {
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding: 12px 4px;
   text-align: center;
   background-color: #f9f9f9;
   color: black;
@@ -161,7 +160,7 @@ header {
   position: relative;
   display: flex;
   flex-flow: column;
-  margin: 25px auto;
+  margin: 30px auto;
 }
 
 .toggle-info {
@@ -291,4 +290,47 @@ input:disabled {
 
 .blue {
   color: blue;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    height: 80px;
+    margin-bottom: 10px;
+  }
+  .header-title {
+    font-size: 28px;
+  }
+  .risk-selector-header-title {
+    font-size: 14px;
+  }
+  #top-logo {
+    margin: 18px 15px;
+    width: 45px;
+  }
+  .risk-selector-header span {
+    display: none;
+  }
+  .risk-selector-button {
+    height: 23px;
+    width: 26px;
+    border: 1px solid black;
+    padding: 0;
+    font-size: 12px;
+    &.blue-button {
+      font-size: 12px;
+      padding: 5px;
+    }
+  }
+  .risk-level-info-container {
+    width: fit-content;
+  }
+  #risk-level-table {
+    th {
+      font-size: 12px;
+    }
+  }
+  .toggle-info {
+    left: 0;
+    top: -27px;
+  }
 }
