@@ -1,6 +1,6 @@
 ## Financial Advisor Challenge App
 
-![Preview](financial-advisor-preview.png?raw=true)
+![Preview](financial-advisor-screenshot.png?raw=true)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
