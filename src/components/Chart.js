@@ -42,10 +42,10 @@ const Chart = ({ currentLevelData }) => {
     <div className="risk-level-chart-container">
       <Donut
         data={chartData}
-        width={500}
-        height={500}
-        externalRadius={500 / 2.5}
-        internalRadius={500 / 5}
+        width={400}
+        height={400}
+        externalRadius={400 / 2.5}
+        internalRadius={400 / 5}
       />
     </div>
   );

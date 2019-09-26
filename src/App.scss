@@ -105,7 +105,7 @@ header {
 }
 
 .risk-selector-button.blue-button {
-  width: fit-content;
+  width: auto;
   font-size: 17px;
   font-weight: 600;
   background-color: #73d0ff;
@@ -322,7 +322,7 @@ input:disabled {
     }
   }
   .risk-level-info-container {
-    width: fit-content;
+    width: 100%;
   }
   #risk-level-table {
     th {
