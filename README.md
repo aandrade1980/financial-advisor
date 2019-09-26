@@ -28,7 +28,8 @@ App Demo:
 
 Things to improve:
 
-- There is no validation in the inputs in the rebalance step.
+- There's no validation in the inputs in the rebalance step.
+- Think out the hard coded data in a local file architecture a little more.
 
 ### More Info:
 
