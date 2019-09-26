@@ -1,3 +1,7 @@
+## Financial Advisor Challenge App
+
+![Preview](financial-advisor-preview.png?raw=true)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Instalation
@@ -20,12 +24,14 @@ http://localhost:3000/
 
 App Demo:
 
-[video Link:](https://drive.google.com/file/d/1C7yUq4zi8yEZcZvZ7HWRbhufYeoPsNaX/view?usp=sharing)
+[Link to Video](https://drive.google.com/file/d/1C7yUq4zi8yEZcZvZ7HWRbhufYeoPsNaX/view?usp=sharing)
 
 Things to improve:
 
 - There is no validation in the inputs in the rebalance step.
 -
+
+### More Info:
 
 ### `npm start`
 
