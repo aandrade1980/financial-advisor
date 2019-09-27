@@ -1,12 +1,19 @@
 import React from "react";
 import classNames from "classnames";
 
+// Redux
+import { connect } from "react-redux";
+import { setRiskLevel } from "../redux/actions/financialActions";
+
 const RiskTable = ({
   riskLevels = [],
   selectedRiskLevel = 0,
   headerTitles,
-  showPorcentaje = false
+  showPorcentaje = false,
+  setRiskLevel
 }) => {
+  const handleRowClick = riskLevel => setRiskLevel(riskLevel);
+
   const renderTableHeader = () =>
     headerTitles.map((title, index) => <th key={index}>{title}</th>);
 
@@ -17,6 +24,7 @@ const RiskTable = ({
         className={classNames({
           active: selectedRiskLevel === level.risk
         })}
+        onClick={() => handleRowClick(level.risk)}
       >
         {Object.values(level).map((value, index) => (
           <td key={index}>
@@ -39,4 +47,7 @@ const RiskTable = ({
   );
 };
 
-export default RiskTable;
+export default connect(
+  null,
+  { setRiskLevel }
+)(RiskTable);
