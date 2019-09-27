@@ -344,7 +344,7 @@ input:disabled {
   #risk-level-table {
     font-size: 12px;
     th {
-      font-size: 12px;
+      padding: 12px 0;
     }
   }
   .toggle-info {
@@ -359,7 +359,7 @@ input:disabled {
     padding: 5px;
   }
   .risk-level-table-container {
-    width: 98vw;
+    padding: 5px;
   }
   .risk-calculator-input-container {
     margin-top: 0;
