@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900");
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
 
 // Colors
 $blue: #0084bf;
@@ -10,7 +10,7 @@ $white: #f9f9f9;
 
 // Generals
 $grey-border: 1px solid $grey;
-$grey-border2: 1px solid grey;
+$grey-border2: 1px solid $grey2;
 $black-border: 1px solid black;
 
 // General Settings
@@ -29,7 +29,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -183,11 +183,11 @@ header {
 }
 
 .donut {
-  background: url("/images/donutlogo.png") center/cover no-repeat;
+  background: url('/images/donutlogo.png') center/cover no-repeat;
 }
 
 .table {
-  background: url("/images/chartlogo.jpg") center/cover no-repeat;
+  background: url('/images/chartlogo.jpg') center/cover no-repeat;
 }
 
 .risk-calculator-container {
